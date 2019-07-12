@@ -1,0 +1,24 @@
+{
+  "name": "ng-form-dynamic",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "About Angular dynamic form",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/animations": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "rxjs": "~6.3.3",
+    "typescript": "~3.2.2"
+  },
+  "keywords": [
+    "ant",
+    "design",
+    "angular",
+    "form",
+    "dynamic"
+  ],
+  "dependencies": {
+    "ant-reset-private": "^7.5.4"
+  }
+}

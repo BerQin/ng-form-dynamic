@@ -1,0 +1,26 @@
+<form
+  nz-form
+  [nzLayout]="layout"
+  [formGroup]="groupService?.FormGroup"
+  (ngSubmit)="submitForm()"
+>
+
+<fd-form-item-distribution
+  [group] = "groupService?.FormGroup"
+  [options] = "options"
+></fd-form-item-distribution>
+
+<nz-form-item>
+  <nz-form-control [nzSpan]="groupService?.isHorizontal ? 14 : null" [nzOffset]="groupService?.isHorizontal ? 4 : null">
+    <ng-container *ngIf="fdButtonRender">
+        <ng-container
+          [ngTemplateOutlet]="fdButtonRender"
+        ></ng-container>
+    </ng-container>
+    <ng-container *ngIf="!fdButtonRender" >
+      <button [disabled]="groupService?.FormGroup?.invalid" nz-button nzType="primary">提交</button>
+    </ng-container>
+  </nz-form-control>
+</nz-form-item>
+
+</form>

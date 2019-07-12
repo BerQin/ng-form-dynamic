@@ -1,0 +1,19 @@
+<form
+  nz-form
+  [nzLayout]="layout"
+  [formGroup]="groupService?.FormGroup"
+  (ngSubmit)="submitForm()"
+>
+
+<app-form-item-distribution
+  [group] = "groupService?.FormGroup"
+  [options] = "options"
+></app-form-item-distribution>
+
+<nz-form-item>
+  <nz-form-control [nzSpan]="groupService?.isHorizontal ? 14 : null" [nzOffset]="groupService?.isHorizontal ? 4 : null">
+    <button [disabled]="groupService?.FormGroup?.invalid" nz-button nzType="primary">提交</button>
+  </nz-form-control>
+</nz-form-item>
+
+</form>

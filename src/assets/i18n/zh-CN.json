@@ -1,0 +1,734 @@
+{
+  "logoTitle":"数据中心统一项目",
+  "log": {
+    "title": "更新日志",
+    "update": {
+      "data": [
+        {
+          "version": "2.0.1",
+          "tag": "version",
+          "date": "2019-05-06",
+          "children": [
+            {
+              "title": "新增组件，修改菜单的service模式",
+              "children": []
+            },
+            {
+              "title": "新增主体自定义样式区域",
+              "children": []
+            },
+            {
+              "title": "新增公共interface, 包含：选择配置，弹层返回数据",
+              "children": []
+            },
+            {
+              "title": "Class不分新添加form验证器class, json处理class",
+              "children": []
+            }
+          ]
+        },
+        {
+          "version": "2.0.0",
+          "tag": "version",
+          "date": "2019-05-06",
+          "children": [
+            {
+              "title": "修复菜单问题",
+              "children": []
+            },
+            {
+              "title": "升级项目至angular7.2.0",
+              "children": []
+            },
+            {
+              "title": "修改项目为less样式项目,与组件库主题互通",
+              "children": []
+            },
+            {
+              "title": "强化公共类的项目导出原则 <a href='/home/main/catalog'>连接地址</a>",
+              "children": []
+            },
+            {
+              "title": "设置全局的主体引入目录<span class='code'>/assets/theme</span>并归类样式文件",
+              "children": []
+            },
+            {
+              "title": "修改<span class='code'>/shared/services</span>内容导出",
+              "children": []
+            },
+            {
+              "title": "新增<span class='code'>@common</span>内容 新增内容",
+              "children": [
+                {
+                  "title": "class",
+                  "children": [
+                    {
+                      "title": "chart 类加入到class中"
+                    },
+                    {
+                      "title": "新增table 类"
+                    },
+                    {
+                      "title": "新增http-util 类"
+                    },
+                    {
+                      "title": "新增route-util 类"
+                    },
+                    {
+                      "title": "新增string 类"
+                    }
+                  ]
+                }, {
+                  "title": "const",
+                  "children": [
+                    {
+                      "title": "新增page-apply 常量"
+                    },
+                    {
+                      "title": "新增common.const 常量"
+                    }
+                  ]
+                }, {
+                  "title": "function",
+                  "children": [
+                    {
+                      "title": "整理http 请求装饰类方法"
+                    },
+                    {
+                      "title": "整理common 公共方法"
+                    }
+                  ]
+                }, {
+                  "title": "interface",
+                  "children": [
+                    {
+                      "title": "新增page-apply 类型接口"
+                    },
+                    {
+                      "title": "新增table 类型接口"
+                    },
+                    {
+                      "title": "新增common.interface 类型接口"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "新增<span class='code'>/core</span>内容 新增内容",
+              "children": [
+                {
+                  "title": "browser",
+                  "children": [
+                    {
+                      "title": "添加 浏览器信息获取 class"
+                    }
+                  ]
+                }, {
+                  "title": "cache",
+                  "children": [
+                    {
+                      "title": "添加 页面缓存 class"
+                    }
+                  ]
+                }, {
+                  "title": "cookie",
+                  "children": [
+                    {
+                      "title": "添加 cookie class"
+                    }
+                  ]
+                }, {
+                  "title": "language",
+                  "children": [
+                    {
+                      "title": "添加 语言 class"
+                    }
+                  ]
+                }, {
+                  "title": "logger",
+                  "children": [
+                    {
+                      "title": "添加 打印 class"
+                    }
+                  ]
+                }, {
+                  "title": "request",
+                  "children": [
+                    {
+                      "title": "修改 请求的拦截器以及请求的地址读取机制，兼容config与environment环境变量两种配置方式优先使用config class"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "version": "1.1.1",
+          "tag": "version",
+          "date": "2019-04-15",
+          "children": [
+            {
+              "title": "修改原@common/function内方法改为，@common/class的类方法，方便调用",
+              "children": ""
+            },
+            {
+              "title": "修改部分的菜单结构，对菜单结构进行明确含义请查看<a href='/home/main/catalog'>连接地址</a>",
+              "children": ""
+            }
+          ]
+        },
+        {
+          "version": "1.1.0",
+          "tag": "version",
+          "date": "2019-03-25",
+          "children": [
+            {
+              "title": "增强菜单功能支持4级菜单,并添加提示信息",
+              "children": ""
+            },
+            {
+              "title": "添加样例展示菜单支持入门级开发",
+              "children": ""
+            },
+            {
+              "title": "其他的名称问题修复",
+              "children": ""
+            },
+            {
+              "title": "style: 主内容样式修改减少间距",
+              "children": ""
+            }
+          ]
+        },
+        {
+          "version": "1.0.0",
+          "tag": "version",
+          "date": "2019-03-15",
+          "children": [
+            {
+              "title": "加入通用方法@common/function 时间转换，数字补零",
+              "children": ""
+            },
+            {
+              "title": "修改core目录的功能明确内容和方向",
+              "children": ""
+            },
+            {
+              "title": "修改pageService的目录至shared/service",
+              "children": ""
+            },
+            {
+              "title": "修复menu组件的显示和处理错误",
+              "children": ""
+            },
+            {
+              "title": "添加使用说明内容和截图",
+              "children": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "structure": {
+    "title": "关于项目目录介绍",
+    "rightTop": {
+      "title": "项目结构使用介绍",
+      "content": "<p>下载公共项目后，首先 <span class='code'>npm install</span>，之后可根据需要删除<span class='code'>pages</span>目录内容，静态资源目录 <span class='code'>assets</span>可删除<span class='code'>temp</span>目录（案例资源），其他均不需要处理和删除。  <br>  <span class='red'>重点：@common与core中的模块导出，请遵守index.ts仅导出本文件夹下的文件目录，不做外层index导出旗下的文件夹</span></p><br><p>  <span class='code'>@common</span>目录创建规则：<br>  公共方法直接平铺在文件夹下，如果业务需要的内容请自行创建文件夹类似@common/class/config  <br>  <span class='red'>请创建@common/class/<你的模块文件夹></span></p><br><p>  <span class='code'>pages</span>目录创建规则：<br>  一级目录均是model<br>  二级目录可以是model或component<br>  三级目录是component<br>  <br>  每层model可以包含自己的service，shared，用于负责本模块的构建需要。  每层model的service需注册在本model下，不允许在root下，需要root下的全局service，请在最外层shared/service下创建。</p><p><span class='code'>@common/class</span>提供了诸多公用方法其中包括：</p><pre>  1、时间转化  2、数字操作</pre>"
+    },
+    "rightBottom": {
+      "title": "项目树详情",
+      "nodes": [
+        {
+          "title"   : "app",
+          "key"     : "100",
+          "author": "应用目录",
+          "expanded": true,
+          "children": [
+            { "title": "@common", "expanded": true, "key": "1000", "author": "任何的公共模块（本项目使用）（公共方法直接平铺在文件夹下，如果业务需要的内容请自行创建文件夹类似class/config）",
+              "children": [
+                { "title": "class", "key": "100002", "author": "公共的类/继承类", "isLeaf": true},
+                { "title": "const", "key": "100003", "author": "公共的常量", "isLeaf": true},
+                { "title": "enum", "key": "100004", "author": "公共的枚举", "isLeaf": true},
+                { "title": "function", "key": "100005", "author": "公共的方法", "isLeaf": true},
+                { "title": "interface", "key": "100006", "author": "公共的接口interface", "isLeaf": true},
+                { "title": "model", "key": "100007", "author": "公共的模型model", "isLeaf": true},
+                { "title": "...", "key": "100099", "author": "其他", "isLeaf": true}
+              ]
+            },
+            { "title": "core", "key": "1001", "author": "核心方法（一次性调用的，且与业务无相关性，多项目也少有改动的部分）",
+            "expanded": true,
+              "children": [
+                { "title": "browser", "key": "100102", "author": "浏览器信息获取类", "isLeaf": true},
+                { "title": "cache", "key": "100103", "author": "页面缓存类", "isLeaf": true},
+                { "title": "cookie", "key": "100104", "author": "cookie读取与设置类", "isLeaf": true},
+                { "title": "language", "key": "100105", "author": "语言国际化类", "isLeaf": true},
+                { "title": "logger", "key": "100106", "author": "打印类", "isLeaf": true},
+                { "title": "request", "key": "100107", "author": "HTTP请求方法", "isLeaf": true},
+                { "title": "...", "key": "100199", "author": "其他", "isLeaf": true}
+              ]
+            },
+            { "title": "pages", "key": "1002", "author": "web页面目录（一切web目录）",
+            "expanded": true,
+              "children": [
+                { "title": "一级name", "key": "100201", "author": "一级菜单（models）", "expanded": true,
+                  "children": [
+                    { "title": "二级name", "key": "1002001", "author": "二级菜单（models/componts）", "expanded": true,
+                    "children": [
+                      { "title": "三级name", "key": "10020001", "author": "三级菜单", "isLeaf": true},
+                      { "title": "service", "key": "10020002", "author": "二级菜单下的service服务", "isLeaf": true },
+                      { "title": "shared", "key": "10020003", "author": "二级菜单下的shared公用模块", "isLeaf": true }
+                      ]
+                    },
+                    { "title": "service", "key": "1002002", "author": "一级菜单下的service服务", "isLeaf": true },
+                    { "title": "shared", "key": "1002003", "author": "一级菜单下的shared公用模块", "isLeaf": true }
+                  ]
+                }
+              ]
+            },
+            { "title": "shared", "key": "1003", "author": "公用模块（与业务相关的）",
+            "expanded": true,
+              "children": [
+                { "title": "auth", "key": "100101", "author": "路由守卫目录", "isLeaf": true},
+                { "title": "components", "key": "1003002", "author": "公共组件", "isLeaf": true },
+                { "title": "directives", "key": "1003003", "author": "公共指令", "isLeaf": true },
+                { "title": "library", "key": "1003006", "author": "公共库", "isLeaf": true },
+                { "title": "services", "key": "1003004", "author": "公共的服务", "isLeaf": true },
+                { "title": "...", "key": "1003005", "author": "其他", "isLeaf": true }
+              ]
+            }
+          ]
+        }, {
+          "title"   : "assets",
+          "key"     : "101",
+          "author"  : "静态资源堆放目录",
+          "expanded": true,
+          "children": [
+            { "title": "icon", "key": "10101", "author": "图标", "isLeaf": true },
+            { "title": "icon-font", "key": "10102", "author": "阿里字体图标", "isLeaf": true },
+            { "title": "images", "key": "10103", "author": "图片资源", "isLeaf": true },
+            { "title": "config", "key": "10105", "author": "用于配置封闭环境变量", "isLeaf": true },
+            { "title": "temp", "key": "10104", "author": "临时案例资源目录(可删除)", "isLeaf": true }
+          ]
+        }, {
+          "title"   : "environments",
+          "key"     : "102",
+          "author"  : "环境配置目录",
+          "expanded": true,
+          "children": [
+            { "title": "environment.dev.ts", "key": "10201", "author": "开发环境", "isLeaf": true },
+            { "title": "environment.prod.ts", "key": "10202", "author": "线上环境", "isLeaf": true },
+            { "title": "environment.ts", "key": "10203", "author": "本地开发环境", "isLeaf": true }
+          ]
+        } ]
+    }
+  },
+  "home": {
+    "main": {
+      "commonTop": "<h1>360CommonProject</h1><h3>项目中使用到的库与插件：</h3><p>1、<a href='http://ng.components.qihoo.net/' target='_blank'>AntResetPrivate UI组件</a></p><p>2、<a href='https://echarts.baidu.com' target='_blank'>Echart 可视化图表</a></p><p>3、<a href='https://github.com/BerQin/drawTopology' target='_blank'>drawTopology 拓扑图组件</a></p><p>4、<a href='https://www.iconfont.cn/' target='_blank'>Iconfont 阿里字体图标库</a></p>"
+    }
+  },
+  "used": {
+    "nodes": [
+      {
+        "title": "一、前端菜单配置",
+        "content": [
+          {
+            "content": "菜单配置分使用常量配置，和使用数据接口配置两种，在普通页面配置完成后，进行菜单的显示配置，内容如下，菜单的配置位置，以及使用位置。"
+          },
+          {
+            "content": "如需要进行动态菜单配置，只需要通过接口获得list然后传入组件中"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/menu_config.jpg"
+          },
+          {
+            "path": "/assets/temp/user-5-menuuse.jpg"
+          }
+        ]
+      },
+      {
+        "title": "二、service接口使用",
+        "content": [
+          {
+            "content": "请求接口使用service作为管理层，并使用核心方法中的装饰类进行装饰，填写请求地址，并在页面中如图二使用，一下为具体内容"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/service_c.png"
+          },
+          {
+            "path": "/assets/temp/use.jpg"
+          }
+        ]
+      },
+      {
+        "title": "三、environments环境文件使用",
+        "content": [
+          {
+            "content": "apiUrl页面所有请求的地址，这是根据ng build在构建的时候选择需要的环境变量进行编译 添加参数 <span class='code'>--configuration=dev</span>进行设置"
+          },
+          {
+            "content": "production属性是(true)启用生产模式，(false)关闭生产模式,在开发过程中存在一些调试内容，在发布线上环境时候请关闭此属性。"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/huanjing_jiesao1.jpg"
+          }
+        ]
+      },
+      {
+        "title": "四、config.json配置环境",
+        "content": [
+          {
+            "content": "<span class='code'>assets/config/config.json</span> 可用于配置环境变量用于给外部提供统一的系统环境修改位置。常用在外部部署移交部署人员，简单的修改外部变量来达到修改项目的能力。"
+          },
+          {
+            "content": "<pre>\"url\": \"http://qreport.test.qihoo.net/report/api\", //项目所有接口的请求地址变量\"loginUrl\": \"https://login.ops.qihoo.net:4436/sec/login\", // 项目登陆验证的跳转路径\"domain\": \"qihoo.net\" // cookie域的设定</pre>"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/user-4-filelocal.jpg"
+          }
+        ]
+      },
+      {
+        "title": "五、删除code展示的包和组件",
+        "content": [
+          {
+            "content": "当不需要code展示的组件部分，为了减小包的大小和每次页面请求的内容，请删除code-box内容以及prism插件的引入"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/user-6.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "MENU_LIST": [
+    {
+      "attributes": {
+        "icon": null,
+        "router": "",
+        "title": "项目使用"
+      },
+      "children": [
+        {
+          "attributes": {
+            "icon": "home",
+            "router": "/home/main",
+            "title": "项目介绍"
+          },
+          "children": [
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/update-log",
+                "title": "更新日志"
+              },
+              "children": []
+            },
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/catalog",
+                "title": "项目结构"
+              },
+              "children": []
+            },
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/file-catalog",
+                "title": "使用介绍"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "attributes": {
+            "icon": "flag",
+            "router": "/home/examples",
+            "title": "样例展示"
+          },
+          "children": [
+            {
+              "attributes": {
+                "icon": "book",
+                "router": "/home/examples/basic",
+                "title": "基础组件"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/table",
+                    "title": "Table 表格"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/input",
+                    "title": "Input 输入框"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/dropdown",
+                    "title": "Dropdown 下拉菜单"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/checkbox",
+                    "title": "Checkbox 多选框"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/datepicker",
+                    "title": "Datepicker 日期选择"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/select",
+                    "title": "Select 选择器"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/switch",
+                    "title": "Switch 开关"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/transfer",
+                    "title": "Transfer 穿梭框"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tree",
+                    "title": "Tree 树状结构"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tabs",
+                    "title": "Tabs 标签页"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/card",
+                    "title": "Card 卡片"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tooltip",
+                    "title": "Tooltip 消息提示"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/timeline",
+                    "title": "Timeline 时间轴"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/message",
+                    "title": "Message 全局提示"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/modal",
+                    "title": "Modal 对话框"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "copy",
+                "router": "/home/examples/recombination",
+                "title": "复合组件"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/recombination/code",
+                    "title": "Code 代码展示"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "file-pdf",
+                "router": "/home/examples/cfunction",
+                "title": "通用方法/类"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/cfunction/date",
+                    "title": "Date 时间类"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/cfunction/form",
+                    "title": "Form 动态表单"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "file-pdf",
+                "router": "/home/examples/coreclass",
+                "title": "核心类"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/browser",
+                    "title": "Browser 浏览器"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/cache",
+                    "title": "Cache 缓存"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/cookie",
+                    "title": "Cookie"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/language",
+                    "title": "Language 语言"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/logger",
+                    "title": "Logger 打印输出"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/request",
+                    "title": "Request 请求"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "http://ng.components.qihoo.net",
+        "isblank": true,
+        "title": "AntResetPrivateUI组件库"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://github.com/BerQin/drawTopology",
+        "isblank": true,
+        "title": "DrawTopology"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://echarts.baidu.com/examples/",
+        "isblank": true,
+        "title": "Echart"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://www.iconfont.cn/",
+        "isblank": true,
+        "title": "阿里IconFont"
+      },
+      "children": []
+    }
+  ]
+}

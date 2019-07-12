@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../publish/ng-form-dynamic",
+  "lib": {
+    "entryFile": "./ng-form-dynamic.module.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "angular",
+    "ant-reset-private"
+  ]
+}

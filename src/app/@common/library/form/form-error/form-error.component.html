@@ -1,0 +1,10 @@
+
+<nz-form-explain
+  *ngIf="(FormGroup.get(option.key)?.dirty && FormGroup.get(option.key)?.errors) || (groupKey && FormGroup.get(groupKey)?.controls[option.key]?.dirty && FormGroup.get(groupKey)?.controls[option.key]?.errors)"
+>
+  <ng-container *ngFor="let key of ObjectKeys(option.errorMsg)">
+    <ng-container *ngIf="FormGroup.get(option.key)?.hasError(key) || FormGroup.get(groupKey)?.controls[option.key]?.hasError(key)">
+      {{option.errorMsg[key]}}
+    </ng-container>
+  </ng-container>
+</nz-form-explain>

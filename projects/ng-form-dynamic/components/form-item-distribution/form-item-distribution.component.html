@@ -1,0 +1,37 @@
+<ng-container *ngFor = "let item of options;">
+  <fd-form-input
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'input'"
+  ></fd-form-input>
+
+  <fd-form-select
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'select'"
+  ></fd-form-select>
+
+  <fd-form-radio
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'radio'"
+  ></fd-form-radio>
+
+  <fd-form-date
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'date'"
+  ></fd-form-date>
+
+  <fd-form-checkbox
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'checkbox'"
+  ></fd-form-checkbox>
+
+  <fd-form-textarea
+    [option] = "item"
+    [groupName] = "groupName"
+    *ngIf = "item.type === 'textarea'"
+  ></fd-form-textarea>
+</ng-container>

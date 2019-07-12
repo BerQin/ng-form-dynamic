@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'theme';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p, ul, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: @primary-color;
+}
+
+a:hover {
+  color: @primary-color;
+}
+
+:-moz-placeholder {
+  color: @scroll-color !important;
+  font-weight: normal !important;
+}
+
+::-moz-placeholder {
+  color: @scroll-color !important;
+  font-weight: normal !important;
+}
+
+:-ms-input-placeholder {
+  color: @scroll-color !important;
+  font-weight: normal !important;
+}
+
+::-webkit-input-placeholder {
+  color: @scroll-color !important;
+  font-weight: normal !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: @scroll-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: @scroll-color;
+}
+.cl:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.cl {
+  zoom: 1;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+

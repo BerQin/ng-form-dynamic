@@ -1,0 +1,5 @@
+{
+  "apiUrl": "http://qreport.test.qihoo.net/report/api",
+  "loginUrl": "https://login.ops.qihoo.net:4436/sec/login",
+  "cookieDomain": ""
+}

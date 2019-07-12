@@ -1,0 +1,707 @@
+{
+  "logoTitle":"DataCenterProject",
+  "log": {
+    "title": "Log Update",
+    "update": {
+      "data": [
+        {
+          "version": "2.0.0",
+          "tag": "version",
+          "date": "2019-05-06",
+          "children": [
+            {
+              "title": "Upgrade to angular7.2.0",
+              "children": []
+            },
+            {
+              "title": "Modify the project to be less style project and intercommunicate with the component library theme",
+              "children": []
+            },
+            {
+              "title": "Enforce the project export principle for common classes <a href='/home/main/catalog'>Link</a>",
+              "children": []
+            },
+            {
+              "title": "Sets the global principal import directory<span class='code'>/assets/theme</span>And categorize style files",
+              "children": []
+            },
+            {
+              "title": "correction <span class='code'>/shared/services</span>Content is derived",
+              "children": []
+            },
+            {
+              "title": "Add <span class='code'>@common</span> The new content:",
+              "children": [
+                {
+                  "title": "class",
+                  "children": [
+                    {
+                      "title": "chart add to class"
+                    },
+                    {
+                      "title": "Add table class"
+                    },
+                    {
+                      "title": "Add http-util class"
+                    },
+                    {
+                      "title": "Add route-util class"
+                    },
+                    {
+                      "title": "Add string class"
+                    }
+                  ]
+                }, {
+                  "title": "const",
+                  "children": [
+                    {
+                      "title": "Add page-apply const"
+                    },
+                    {
+                      "title": "Add common.const const"
+                    }
+                  ]
+                }, {
+                  "title": "function",
+                  "children": [
+                    {
+                      "title": "neaten http Request decorator class methods"
+                    },
+                    {
+                      "title": "neaten common common function"
+                    }
+                  ]
+                }, {
+                  "title": "interface",
+                  "children": [
+                    {
+                      "title": "Add page-apply interface"
+                    },
+                    {
+                      "title": "Add table interface"
+                    },
+                    {
+                      "title": "Add common.interface interface"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Add <span class='code'>/core</span> The new content:",
+              "children": [
+                {
+                  "title": "browser",
+                  "children": [
+                    {
+                      "title": "Add  browser class"
+                    }
+                  ]
+                }, {
+                  "title": "cache",
+                  "children": [
+                    {
+                      "title": "Add cache class"
+                    }
+                  ]
+                }, {
+                  "title": "cookie",
+                  "children": [
+                    {
+                      "title": "Add cookie class"
+                    }
+                  ]
+                }, {
+                  "title": "language",
+                  "children": [
+                    {
+                      "title": "Add language class"
+                    }
+                  ]
+                }, {
+                  "title": "logger",
+                  "children": [
+                    {
+                      "title": "Add logger class"
+                    }
+                  ]
+                }, {
+                  "title": "request",
+                  "children": [
+                    {
+                      "title": "Modify the interceptor of the request and the address reading mechanism of the request. It is compatible with config and environment variables, and the config class is preferred"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "version": "1.1.1",
+          "tag": "version",
+          "date": "2019-04-15",
+          "children": [
+            {
+              "title": "Modify the original @common/function method to @common/class class method for easy invocation",
+              "children": ""
+            },
+            {
+              "title": "Modify part of the menu structure, the clear meaning of the menu structure, please check <a href='/home/main/catalog'>Link</a>",
+              "children": ""
+            }
+          ]
+        },
+        {
+          "version": "1.1.0",
+          "tag": "version",
+          "date": "2019-03-25",
+          "children": [
+            {
+              "title": "Enhanced menu support level 4 menu, and add prompt messages",
+              "children": ""
+            },
+            {
+              "title": "Add sample presentation menu to support entry level development",
+              "children": ""
+            },
+            {
+              "title": "Other name issues fixed",
+              "children": ""
+            },
+            {
+              "title": "style: Main content style changes reduce spacing",
+              "children": ""
+            }
+          ]
+        },
+        {
+          "version": "1.0.0",
+          "tag": "version",
+          "date": "2019-03-15",
+          "children": [
+            {
+              "title": "Add Common /function time conversion, number zero",
+              "children": ""
+            },
+            {
+              "title": "Modify core directory functionality to specify content and direction",
+              "children": ""
+            },
+            {
+              "title": "Modify the directory of pageService to Shared /service",
+              "children": ""
+            },
+            {
+              "title": "Fix menu component display and processing errors",
+              "children": ""
+            },
+            {
+              "title": "Add instructions and screenshots",
+              "children": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "structure": {
+    "title": "About The Project Catalog Introduction",
+    "rightTop": {
+      "title": "Introduction to project structure",
+      "content": "<p class='code'>assets<span class='code'>assets</span> assets<span class='code'>temp</span> assets (case resources)<br><span class='red'> key: @common and core module export, please follow index.ts only export the file directory under this folder, do not do the outer index export folder </span></p><br><p> <span class='code'>@common</span> directory creation rules:<br> public method directly tiled under the folder, if the business needs content please create a folder similar to @common/class/config <br><span class='red'> please create @common/class/<your module folder ></span></p><br><p> <span class='code'>pages</span> directory creation rules:<br> level 1 directory is model<br> level 2 directory can be model or component<br> level 3 directory is component<br> <br> each layer model can contain its own service, Shared, for the construction needs of this module.The service of model in each layer should be registered under this model. It is not allowed to be under root, and the global service under root is needed. Please create the service under the outermost layer Shared /service.</p><p><span class='code'>@common/class</span> provides many common methods, including: </p><pre> 1, time conversion 2, digital operation </pre>"
+    },
+    "rightBottom": {
+      "title": "Project tree details",
+      "nodes": [
+        {
+          "title"   : "app",
+          "key"     : "100",
+          "author": "The application directory",
+          "expanded": true,
+          "children": [
+            { "title": "@common", "expanded": true, "key": "1000", "author": "Any public modules (used in this project) (public methods are directly tiled under the folder, if the business needs content, please create a folder similar to class/config)",
+              "children": [
+                { "title": "class", "key": "100002", "author": "Public class/inherited class", "isLeaf": true},
+                { "title": "const", "key": "100003", "author": "Common constants", "isLeaf": true},
+                { "title": "enum", "key": "100004", "author": "Public enumeration", "isLeaf": true},
+                { "title": "function", "key": "100005", "author": "Public function", "isLeaf": true},
+                { "title": "interface", "key": "100006", "author": "Public interface", "isLeaf": true},
+                { "title": "model", "key": "100007", "author": "Common model", "isLeaf": true},
+                { "title": "...", "key": "100099", "author": "Other", "isLeaf": true}
+              ]
+            },
+            { "title": "core", "key": "1001", "author": "Core methods (those that are called once, are not business relevant, and are rarely changed across multiple projects)",
+            "expanded": true,
+              "children": [
+                { "title": "browser", "key": "100102", "author": "Browser information retrieval class", "isLeaf": true},
+                { "title": "cache", "key": "100103", "author": "Page cache class", "isLeaf": true},
+                { "title": "cookie", "key": "100104", "author": "Cookie reading and setting classes", "isLeaf": true},
+                { "title": "language", "key": "100105", "author": "Language internationalization class", "isLeaf": true},
+                { "title": "logger", "key": "100106", "author": "Print the class", "isLeaf": true},
+                { "title": "request", "key": "100107", "author": "HTTP request method", "isLeaf": true},
+                { "title": "...", "key": "100199", "author": "Other", "isLeaf": true}
+              ]
+            },
+            { "title": "pages", "key": "1002", "author": "Web page directory (all web directories)",
+            "expanded": true,
+              "children": [
+                { "title": "Level 1 name", "key": "100201", "author": "Level 1 menu(models)", "expanded": true,
+                  "children": [
+                    { "title": "Level 2 name", "key": "1002001", "author": "Level 2 menu（models/componts）", "expanded": true,
+                    "children": [
+                      { "title": "Level 3 name", "key": "10020001", "author": "Level 3 menu", "isLeaf": true},
+                      { "title": "service", "key": "10020002", "author": "Level 2 menu service", "isLeaf": true },
+                      { "title": "shared", "key": "10020003", "author": "Level 2 menu shared", "isLeaf": true }
+                      ]
+                    },
+                    { "title": "service", "key": "1002002", "author": "Level 1 menu service", "isLeaf": true },
+                    { "title": "shared", "key": "1002003", "author": "Level 1 menu shared", "isLeaf": true }
+                  ]
+                }
+              ]
+            },
+            { "title": "shared", "key": "1003", "author": "Common modules (business-related)",
+            "expanded": true,
+              "children": [
+                { "title": "auth", "key": "100101", "author": "Routing guard directory", "isLeaf": true},
+                { "title": "components", "key": "1003002", "author": "Common components", "isLeaf": true },
+                { "title": "directives", "key": "1003003", "author": "Public instruction", "isLeaf": true },
+                { "title": "library", "key": "1003006", "author": "Public library", "isLeaf": true },
+                { "title": "services", "key": "1003004", "author": "Public services", "isLeaf": true },
+                { "title": "...", "key": "1003005", "author": "Other", "isLeaf": true }
+              ]
+            }
+          ]
+        }, {
+          "title"   : "assets",
+          "key"     : "101",
+          "author"  : "Static resource stacking directory",
+          "expanded": true,
+          "children": [
+            { "title": "icon", "key": "10101", "author": "Icon", "isLeaf": true },
+            { "title": "icon-font", "key": "10102", "author": "Ali font icon", "isLeaf": true },
+            { "title": "images", "key": "10103", "author": "Image resources", "isLeaf": true },
+            { "title": "config", "key": "10105", "author": "Used to configure closed environment variables", "isLeaf": true },
+            { "title": "temp", "key": "10104", "author": "Temporary case resource directory (removable)", "isLeaf": true }
+          ]
+        }, {
+          "title"   : "environments",
+          "key"     : "102",
+          "author"  : "Environment configuration directory",
+          "expanded": true,
+          "children": [
+            { "title": "environment.dev.ts", "key": "10201", "author": "The development environment", "isLeaf": true },
+            { "title": "environment.prod.ts", "key": "10202", "author": "The production environment", "isLeaf": true },
+            { "title": "environment.ts", "key": "10203", "author": "Local development environment", "isLeaf": true }
+          ]
+        } ]
+    }
+  },
+  "used": {
+    "nodes": [
+      {
+        "title": "一、Front-end menu configuration",
+        "content": [
+          {
+            "content": "There are two types of menu configuration: constant configuration and data interface configuration. After the general page configuration is completed, the display configuration of the menu is conducted. The contents are as follows: the configuration location of the menu and the use location."
+          },
+          {
+            "content": "If you need to do dynamic menu configuration, you simply get the list through the interface and pass it into the component"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/menu_config.jpg"
+          },
+          {
+            "path": "/assets/temp/user-5-menuuse.jpg"
+          }
+        ]
+      },
+      {
+        "title": "二、Service Used",
+        "content": [
+          {
+            "content": "The request interface USES service as the management level, and decorates with the decoration class in the core method, fills in the request address, and USES it in the page as shown in figure 2. The specific content is as follows"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/service_c.png"
+          },
+          {
+            "path": "/assets/temp/use.jpg"
+          }
+        ]
+      },
+      {
+        "title": "三、Environments Used",
+        "content": [
+          {
+            "content": "ApiUrl page address for all requests, which is compiled based on the environment variable selected by ng build at build time. Add parameter <span class='code'>--configuration=dev</span>"
+          },
+          {
+            "content": "The production attribute is (true) to enable production mode and (false) to close production mode. There is some debugging in the development process. Please close this attribute when publishing online environment."
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/huanjing_jiesao1.jpg"
+          }
+        ]
+      },
+      {
+        "title": "四、Config.json Configure the environment",
+        "content": [
+          {
+            "content": "<span class = 'code' > assets/config/config. The json </ span > can be used to configure the environment variable is used to provide external unified system environment change position.The ability to modify a project by simply modifying external variables is often achieved by transferring the deployer from external deployment."
+          },
+          {
+            "content": "<pre>\"url\": \"http://qreport.test.qihoo.net/report/api\", //Request address variables for all interfaces of the project\n\"loginUrl\": \"https://login.ops.qihoo.net:4436/sec/login\", // Jump path for project login verification\n\"domain\": \"qihoo.net\" // Cookie domain Settings\n</pre>"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/user-4-filelocal.jpg"
+          }
+        ]
+      },
+      {
+        "title": "五、Remove the packages and components shown in code",
+        "content": [
+          {
+            "content": "When the component part presented by code is not needed, in order to reduce the size of the package and the content of each page request, please delete the code-box content and the introduction of prism plug-in"
+          }
+        ],
+        "imgPath": [
+          {
+            "path": "/assets/temp/user-6.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "home": {
+    "main": {
+      "commonTop": "<h1>360CommonProject</h1><h3>Libraries and plug-ins used in the project: </h3><p>1、<a href='http://ng.components.qihoo.net/' target='_blank'>AntResetPrivate UI components</a></p><p>2、<a href='https://echarts.baidu.com' target='_blank'>Echart Visual chart</a></p><p>3、<a href='https://github.com/BerQin/drawTopology' target='_blank'>drawTopology Topology components</a></p><p>4、<a href='https://www.iconfont.cn/' target='_blank'>Iconfont Ali font icon library</a></p>"
+    }
+  },
+  "MENU_LIST": [
+    {
+      "attributes": {
+        "icon": null,
+        "router": "",
+        "title": "Projects Using"
+      },
+      "children": [
+        {
+          "attributes": {
+            "icon": "home",
+            "router": "/home/main",
+            "title": "Introduction"
+          },
+          "children": [
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/update-log",
+                "title": "Log"
+              },
+              "children": []
+            },
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/catalog",
+                "title": "Structure"
+              },
+              "children": []
+            },
+            {
+              "attributes": {
+                "icon": null,
+                "router": "/home/main/file-catalog",
+                "title": "Used"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "attributes": {
+            "icon": "flag",
+            "router": "/home/examples",
+            "title": "Examples"
+          },
+          "children": [
+            {
+              "attributes": {
+                "icon": "book",
+                "router": "/home/examples/basic",
+                "title": "Basic"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/table",
+                    "title": "Table"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/input",
+                    "title": "Input"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/dropdown",
+                    "title": "Dropdown"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/checkbox",
+                    "title": "Checkbox"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/datepicker",
+                    "title": "Datepicker"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/select",
+                    "title": "Select"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/switch",
+                    "title": "Switch"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/transfer",
+                    "title": "Transfer"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tree",
+                    "title": "Tree"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tabs",
+                    "title": "Tabs"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/card",
+                    "title": "Card"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/tooltip",
+                    "title": "Tooltip"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/timeline",
+                    "title": "Timeline"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/message",
+                    "title": "Message"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/basic/modal",
+                    "title": "Modal"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "copy",
+                "router": "/home/examples/recombination",
+                "title": "Recombination"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/recombination/code",
+                    "title": "Code"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "file-pdf",
+                "router": "/home/examples/cfunction",
+                "title": "Common Function/Class"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/cfunction/date",
+                    "title": "Date Class"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/cfunction/form",
+                    "title": "Form"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "icon": "file-pdf",
+                "router": "/home/examples/coreclass",
+                "title": "Core Class"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/browser",
+                    "title": "Browser"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/cache",
+                    "title": "Cache"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/cookie",
+                    "title": "Cookie"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/language",
+                    "title": "Language"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/logger",
+                    "title": "Logger"
+                  },
+                  "children": []
+                },
+                {
+                  "attributes": {
+                    "icon": null,
+                    "router": "/home/examples/coreclass/request",
+                    "title": "Request"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "http://ng.components.qihoo.net",
+        "isblank": true,
+        "title": "AntResetPrivateUI"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://github.com/BerQin/drawTopology",
+        "isblank": true,
+        "title": "DrawTopology"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://echarts.baidu.com/examples/",
+        "isblank": true,
+        "title": "Echart"
+      },
+      "children": []
+    },
+    {
+      "attributes": {
+        "icon": null,
+        "router": "https://www.iconfont.cn/",
+        "isblank": true,
+        "title": "Ali IconFont"
+      },
+      "children": []
+    }
+  ]
+}

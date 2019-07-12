@@ -1,0 +1,23 @@
+<ng-container [formGroup]="group" *ngIf="arrayName" >
+  <ng-container [formArrayName]="arrayName">
+    <ng-container *ngFor="let item of group.get(arrayName).controls; let i = index">
+      <ng-container [formGroupName]="i">
+        <app-form-input
+          [option] = "options[i]"
+          [groupName] = "i"
+          *ngIf = "options[i].type === 'input'"
+        ></app-form-input>
+
+        <app-form-select
+          [option] = "options[i]"
+          *ngIf = "options[i].type === 'select'"
+        ></app-form-select>
+
+        <app-form-radio
+          [option] = "options[i]"
+          *ngIf = "options[i].type === 'radio'"
+        ></app-form-radio>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ng-container>
