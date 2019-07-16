@@ -1,6 +1,6 @@
 {
   "name": "ng-form-dynamic",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "About Angular dynamic form",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
