@@ -18,6 +18,12 @@
       "dom"
     ],
     "paths": {
+      "ng-form-dynamic/*": [
+        "../projects/ng-form-dynamic/*"
+      ],
+      "ng-form-dynamic": [
+        "../projects/ng-form-dynamic/ng-form-dynamic.module.ts"
+      ],
       "@common/*": [
         "./app/@common/*"
       ],

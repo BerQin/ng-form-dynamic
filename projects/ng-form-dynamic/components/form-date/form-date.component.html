@@ -1,7 +1,71 @@
 <ng-container [formGroup]="FormGroup">
 
   <ng-container
-    *ngIf="groupName"
+    *ngIf="arrayName"
+    [formArrayName]="arrayName"
+  >
+    <ng-container
+      [formGroupName]="groupName"
+    >
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="isHorizontal ? 4 : null"
+          [nzRequired]="option.required"
+        >{{option.label}}</nz-form-label>
+        <nz-form-control
+          [nzSpan]="isHorizontal ? 14 : null"
+        >
+  
+          <nz-range-picker
+            *ngIf="!option.derivativeType"
+            [nzFormat]="option.dateFormat"
+            [nzShowTime]="option.showTime"
+            [nzValueFormat]="option.valueFormat"
+            [formControlName]="option.key"
+          ></nz-range-picker>
+  
+          <nz-date-picker
+            *ngIf="option.derivativeType === 'date'"
+            [nzFormat]="option.dateFormat"
+            [nzShowTime]="option.showTime"
+            [nzValueFormat]="option.valueFormat"
+            [formControlName]="option.key"
+          ></nz-date-picker>
+  
+          <nz-month-picker
+            *ngIf="option.derivativeType === 'month'"
+            [nzFormat]="option.dateFormat || 'yyyy-MM'"
+            [nzValueFormat]="option.valueFormat"
+            [formControlName]="option.key"
+          ></nz-month-picker>
+  
+          <nz-year-picker
+            *ngIf="option.derivativeType === 'year'"
+            [nzFormat]="option.dateFormat || 'yyyy'"
+            [nzValueFormat]="option.valueFormat"
+            [formControlName]="option.key"
+          ></nz-year-picker>
+  
+          <nz-week-picker
+            *ngIf="option.derivativeType === 'week'"
+            [nzFormat]="option.dateFormat"
+            [nzValueFormat]="option.valueFormat"
+            [formControlName]="option.key"
+          ></nz-week-picker>
+  
+          <fd-form-error
+            *ngIf="option.errorMsg"
+            [option]="option"
+            [arrayKey] = "arrayName"
+            [groupKey] = "groupName"
+          ></fd-form-error>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+  </ng-container>
+
+  <ng-container
+    *ngIf="!arrayName && groupName"
     [formGroupName]="groupName"
   >
     <nz-form-item>
@@ -60,7 +124,7 @@
   </ng-container>
 
   <ng-container
-    *ngIf="!groupName"
+    *ngIf="!arrayName && !groupName"
   >
     <nz-form-item>
       <nz-form-label

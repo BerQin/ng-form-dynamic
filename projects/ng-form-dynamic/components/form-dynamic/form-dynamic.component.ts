@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, TemplateRef, ContentChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { FormOption, FormGroupOption, FormGroupItem, SelectOption } from '../../interface';
+import { FormOption, FormGroupOption, FormGroupItem, SelectOption, FormGroupArrOption, FormArrayItem } from '../../interface';
 import { FormGroupsService, FormGlobalService } from '../../service';
 
 @Component({
@@ -15,7 +15,7 @@ import { FormGroupsService, FormGlobalService } from '../../service';
     FormGroupsService
   ]
 })
-export class FormDynamicComponent implements OnInit, OnDestroy {
+export class FormDynamicComponent implements OnInit {
 
   @Input() set options(value: FormOption[]) {
     this.groupService.options = value;
@@ -57,7 +57,6 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     // 初始化触发
     this.groupService.FormGroup.reset(this.defaultValue);
     // 表单存放暴露
-    console.log(this.fdButtonRender);
     if (this.key) {
       this.globalService.formGroups[this.key] = this.groupService.FormGroup;
     }
@@ -65,7 +64,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
 
   initFormGroup() {
     this.options.forEach((item: FormOption, index) => {
-      this.groupService.FormGroupOption[item.key] = this.initItemConfig(item);
+      this.groupService.FormGroupOption[item.key] = this.initItemConfig(item, true);
     });
     this.groupService.FormGroup = this.fb.group(this.groupService.FormGroupOption);
   }
@@ -76,11 +75,21 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
       this.groupService.FormGroup.get(item).valueChanges.pipe(
         takeUntil(this.groupService.listenComponetDestroyeds$[item])
       ).subscribe((value: any) => {
+
+        // 清理创建的内容
         this.clearGroupForm(this.groupService.groupOptions[item].formGroup);
+        this.clearArrGroupForm(this.groupService.groupOptions[item].formArray);
+
         if (value !== null && value !== undefined) {
-          const groupOption: FormGroupOption = this.groupService.groupOptions[item].formGroup[value];
-          if (groupOption) {
-            this.groupService.FormGroup.addControl(groupOption.key, this.creatFormGroup(groupOption.groups));
+          const groupOption: FormGroupItem = this.groupService.groupOptions[item].formGroup;
+          if (groupOption && groupOption[value]) {
+              this.groupService.FormGroup.addControl(groupOption[value].key, this.creatFormGroup(groupOption[value].groups));
+          }
+
+          const groupArrayOption = this.groupService.groupOptions[item].formArray;
+          if (groupArrayOption && groupArrayOption[value]) {
+            const arrGroup = this.creatFormArrayGroup(groupArrayOption[value].groupsArr);
+            this.groupService.FormGroup.addControl(groupArrayOption[value].key, arrGroup);
           }
         }
       });
@@ -95,6 +104,25 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     }
   }
 
+  clearArrGroupForm(item: FormArrayItem) {
+    for (const key in item) {
+      if (key) {
+        this.groupService.FormGroup.removeControl(item[key].key);
+      }
+    }
+  }
+
+  creatFormArrayGroup(arr: Array<FormOption[]>): FormArray {
+    const arrGroup: FormGroup[] = [];
+    if (arr && arr.length) {
+      arr.forEach((item) => {
+        const formgroup = this.creatFormGroup(item);
+        arrGroup.push(formgroup);
+      });
+    }
+    return this.fb.array(arrGroup);
+  }
+
   creatFormGroup(options: FormOption[]): FormGroup {
     const formoptions = {};
 
@@ -105,13 +133,16 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     return this.fb.group(formoptions);
   }
 
-  initItemConfig(item: FormOption, parent?: FormOption): any {
+  initItemConfig(item: FormOption, isfirst?: boolean): any {
     const result: any = this.creatValueConfig(item);
-    const key: string = parent ? parent.key + '-' + item.key : item.key;
-    this.groupService.groupOptions[key] = item;
+    if (isfirst) {
+      this.groupService.groupOptions[item.key] = item;
 
-    if (item.formGroup) {
-      this.listenKeys.push(key);
+      if (item.formGroup || (item.formArray && item.formArray.length)) {
+        if (this.listenKeys.indexOf(item.key) === -1) {
+          this.listenKeys.push(item.key);
+        }
+      }
     }
     return result;
   }
@@ -171,9 +202,5 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
 
   submitForm() {
     this.formSubmit.emit(this.groupService.FormGroup.getRawValue());
-  }
-
-  ngOnDestroy() {
-    this.groupService.ngOnDestroy();
   }
 }

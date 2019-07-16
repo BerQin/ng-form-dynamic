@@ -1,7 +1,46 @@
 <ng-container [formGroup]="FormGroup">
 
   <ng-container
-    *ngIf="groupName"
+    *ngIf="arrayName"
+    [formArrayName]="arrayName"
+  >
+    <ng-container
+      [formGroupName]="groupName"
+    >
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="isHorizontal ? 4 : null"
+          [nzRequired]="option.required"
+        >{{option.label}}</nz-form-label>
+        <nz-form-control
+          [nzSpan]="isHorizontal ? 14 : null"
+        >
+  
+          <input
+            *ngIf="!option.derivativeType"
+            nz-input
+            [formControlName]="option.key"
+            [placeholder]="option.placeholder"
+          />
+  
+          <nz-input-number
+            *ngIf="option.derivativeType === 'number'"
+            [formControlName]="option.key"
+          ></nz-input-number>
+  
+          <fd-form-error
+            *ngIf="option.errorMsg"
+            [option]="option"
+            [arrayKey] = "arrayName"
+            [groupKey] = "groupName"
+          ></fd-form-error>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+  </ng-container>
+
+  <ng-container
+    *ngIf="!arrayName && groupName"
     [formGroupName]="groupName"
   >
     <nz-form-item>
@@ -35,7 +74,7 @@
   </ng-container>
 
   <ng-container
-    *ngIf="!groupName"
+    *ngIf="!arrayName && !groupName"
   >
     <nz-form-item>
       <nz-form-label

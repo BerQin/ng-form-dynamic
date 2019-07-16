@@ -12,6 +12,7 @@ npm i ng-form-dynamic
 ## <a name="use">使用</a>
 
 首先要配置``ant-reset-private``UI组件引入
+
 ``NgFormDynamicModule`` 需要在组件所在的model中引入
 
 ```javascript
@@ -140,17 +141,28 @@ export interface FormOption {
   key: string;
   type: 'input' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date';
   derivativeType?: 'number' | 'button' | 'date' | 'month' | 'year' | 'week';
-  dateFormat?: string;  //  仅时间date类型使用 设置时间格式
-  valueFormat?: string;  //  仅时间date类型使用 设置时间返回数据格式
-  showTime?: boolean;  //  仅时间date类型使用 是否需要时分秒配置
+  dateFormat?: string;  //  仅时间date类型使用
+  valueFormat?: string;  //  仅时间date类型使用
+  showTime?: boolean;  //  仅时间date类型使用
   selectOptions?: SelectOption[] | Observable<SelectOption[]>;  //  radio select checkbox 类型使用
   required?: boolean;
+  hide?: boolean; // 是否显示出来 用于值记录的
   value: any | [ValueOption, ValidatorFn | ValidatorFn[] | AbstractControlOptions | null];
   placeholder?: string;
   errorMsg?: {
     [key: string]: string
   };
+  formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
+}
+
+export interface FormArrayItem {
+  [key: string]: FormGroupArrOption;
+}
+
+export interface FormGroupArrOption {
+  groupsArr: Array<FormOption[]>;
+  key: string;
 }
 
 export interface FormGroupItem {
@@ -180,17 +192,22 @@ export interface ValueOption {
 
 是包含全局的form表单的服务``FormGroupsService``在组件中通过key传入
 
-
 #其他说明
 
 ``options``属性为必填属性配置 其他均为选填
+
 ``layout``布局模式 ``'horizontal' | 'vertical' | 'inline'``
+
 ``key`` 早服务中记录的表单体的关键字否则不记录
+
 ``fdButtonRender`` 自定义提交按钮
+
 ``formSubmit`` 提交事件发生后返回数据的事件
 
 ``input`` 包含``derivativeType`` 只有 ``number``
+
 ``radio`` 包含``derivativeType`` 只有 ``button``
+
 ``date`` 包含``derivativeType`` 只有 ``'date' | 'month' | 'year' | 'week'``
 其他类型均没有``derivativeType``属性切勿配置
 

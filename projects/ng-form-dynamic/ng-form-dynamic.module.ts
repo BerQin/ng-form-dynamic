@@ -14,7 +14,8 @@ import {
   FormErrorComponent,
   FormDateComponent,
   FormCheckboxComponent,
-  FormTextareaComponent
+  FormTextareaComponent,
+  FormArrayDistributionComponent,
 } from './components';
 
 export * from './interface';
@@ -30,7 +31,8 @@ export { FormGlobalService } from './service/form-global.service';
     FormErrorComponent,
     FormDateComponent,
     FormCheckboxComponent,
-    FormTextareaComponent
+    FormTextareaComponent,
+    FormArrayDistributionComponent
   ],
   providers: [
     FormGlobalService

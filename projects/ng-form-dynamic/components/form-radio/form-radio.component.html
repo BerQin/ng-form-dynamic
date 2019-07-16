@@ -1,7 +1,64 @@
 <ng-container [formGroup]="FormGroup">
 
   <ng-container
-    *ngIf="groupName"
+    *ngIf="arrayName"
+    [formArrayName]="arrayName"
+  >
+    <ng-container
+      [formGroupName]="groupName"
+    >
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="isHorizontal ? 4 : null"
+          [nzRequired]="option.required"
+        >{{option.label}}</nz-form-label>
+        <nz-form-control
+          [nzSpan]="isHorizontal ? 14 : null"
+        >
+      
+          <nz-radio-group
+            [nzButtonStyle]="'solid'"
+            [formControlName]="option.key"
+          >
+            <ng-container *ngIf = "!isWeb">
+                <ng-container
+                  *ngIf="!option.derivativeType"
+                >
+                    <label nz-radio *ngFor="let option of selectOptions" [nzValue]="option.value">{{option.label}}</label>
+                </ng-container>
+                <ng-container
+                  *ngIf="option.derivativeType === 'button'"
+                >
+                  <label nz-radio-button *ngFor="let option of selectOptions" [nzValue]="option.value">{{option.label}}</label>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf = "isWeb">
+              <ng-container
+                *ngIf="!option.derivativeType"
+              >
+                  <label nz-radio *ngFor="let option of selectOptions$ | async" [nzValue]="option.value">{{option.label}}</label>
+              </ng-container>
+              <ng-container
+                *ngIf="option.derivativeType === 'button'"
+              >
+                <label nz-radio-button *ngFor="let option of selectOptions$ | async" [nzValue]="option.value">{{option.label}}</label>
+              </ng-container>
+            </ng-container>
+          </nz-radio-group>
+        
+          <fd-form-error
+            *ngIf="option.errorMsg"
+            [option]="option"
+            [arrayKey] = "arrayName"
+            [groupKey] = "groupName"
+          ></fd-form-error>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+  </ng-container>
+
+  <ng-container
+    *ngIf="!arrayName && groupName"
     [formGroupName]="groupName"
   >
     <nz-form-item>
@@ -53,7 +110,7 @@
   </ng-container>
 
   <ng-container
-    *ngIf="!groupName"
+    *ngIf="!arrayName && !groupName"
   >
     <nz-form-item>
       <nz-form-label
@@ -110,3 +167,10 @@
   [options] = "option.formGroup[FormGroup.get(option.key).value].groups"
   [groupName] = "option.formGroup[FormGroup.get(option.key).value].key"
 ></fd-form-item-distribution>
+
+<fd-form-array-distribution
+  *ngIf = "option.formArray && FormGroup.get(option.key).value && option.formArray[FormGroup.get(option.key).value]"
+  [group]="FormGroup"
+  [options] = "option.formArray[FormGroup.get(option.key).value].groupsArr"
+  [arrayName] = "option.formArray[FormGroup.get(option.key).value].key"
+></fd-form-array-distribution>

@@ -2,36 +2,36 @@
   <fd-form-input
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'input'"
+    *ngIf = "item.type === 'input' && !item.hide"
   ></fd-form-input>
 
   <fd-form-select
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'select'"
+    *ngIf = "item.type === 'select' && !item.hide"
   ></fd-form-select>
 
   <fd-form-radio
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'radio'"
+    *ngIf = "item.type === 'radio' && !item.hide"
   ></fd-form-radio>
 
   <fd-form-date
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'date'"
+    *ngIf = "item.type === 'date' && !item.hide"
   ></fd-form-date>
 
   <fd-form-checkbox
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'checkbox'"
+    *ngIf = "item.type === 'checkbox' && !item.hide"
   ></fd-form-checkbox>
 
   <fd-form-textarea
     [option] = "item"
     [groupName] = "groupName"
-    *ngIf = "item.type === 'textarea'"
+    *ngIf = "item.type === 'textarea' && !item.hide"
   ></fd-form-textarea>
 </ng-container>

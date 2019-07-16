@@ -7,3 +7,4 @@ export * from './form-error/form-error.component';
 export * from './form-date/form-date.component';
 export * from './form-checkbox/form-checkbox.component';
 export * from './form-textarea/form-textarea.component';
+export * from './form-array-distribution/form-array-distribution.component';

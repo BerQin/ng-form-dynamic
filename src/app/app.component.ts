@@ -11,13 +11,12 @@ import { PageApiService } from './page-api.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  title = 'ng-lib-project';
+  isShow: boolean = true;
   formOptions2: FormOption[] = [
     {
       label: '存储名称3122',
-      key: 'storageName',
+      key: 'storageName1211',
       type: 'input',
-      derivativeType: 'number',
       placeholder: '请输入存储',
       value: [
         {value: null, disabled: false, required: true},
@@ -28,9 +27,8 @@ export class AppComponent implements OnInit {
   formOptions3: FormOption[] = [
     {
       label: '存储名称asdasd',
-      key: 'storageName',
+      key: 'storageName1212',
       type: 'input',
-      derivativeType: 'number',
       placeholder: '请输入存储',
       value: [
         {value: null, disabled: false, required: true},
@@ -142,13 +140,15 @@ export class AppComponent implements OnInit {
               selectOptions: this.pageApi.dictionaryModel().pipe(
                 map((res: any) => {
                   const list: SelectOption[] = [];
-                  res.data.forEach(es => {
-                    list.push({
-                      label: es.name,
-                      value: es.id,
-                      tips: es.title
+                  if (res && res.data) {
+                    res.data.forEach(es => {
+                      list.push({
+                        label: es.name,
+                        value: es.id,
+                        tips: es.title
+                      });
                     });
-                  });
+                  }
                   return list;
                 })
               ),
@@ -168,13 +168,15 @@ export class AppComponent implements OnInit {
               selectOptions: this.pageApi.dictionaryModel().pipe(
                 map((res: any) => {
                   const list: SelectOption[] = [];
-                  res.data.forEach(es => {
-                    list.push({
-                      label: es.name,
-                      value: es.id,
-                      tips: es.title
+                  if (res && res.data) {
+                    res.data.forEach(es => {
+                      list.push({
+                        label: es.name,
+                        value: es.id,
+                        tips: es.title
+                      });
                     });
-                  });
+                  }
                   return list;
                 })
               ),
@@ -211,13 +213,15 @@ export class AppComponent implements OnInit {
       selectOptions: this.pageApi.dictionaryModel().pipe(
         map((res: any) => {
           const list: SelectOption[] = [];
-          res.data.forEach(es => {
-            list.push({
-              label: es.name,
-              value: es.id,
-              tips: es.title
+          if (res && res.data) {
+            res.data.forEach(es => {
+              list.push({
+                label: es.name,
+                value: es.id,
+                tips: es.title
+              });
             });
-          });
+          }
           return list;
         })
       ),
@@ -238,13 +242,15 @@ export class AppComponent implements OnInit {
       selectOptions: this.pageApi.dictionaryModel().pipe(
         map((res: any) => {
           const list: SelectOption[] = [];
-          res.data.forEach(es => {
-            list.push({
-              label: es.name,
-              value: es.id,
-              tips: es.title
+          if (res && res.data) {
+            res.data.forEach(es => {
+              list.push({
+                label: es.name,
+                value: es.id,
+                tips: es.title
+              });
             });
-          });
+          }
           return list;
         })
       ),
@@ -268,6 +274,171 @@ export class AppComponent implements OnInit {
       },
       errorMsg: {
         required: '请选择'
+      },
+      formArray: {
+        109511: {
+          groupsArr: [
+            [
+              {
+                label: 'isOk扩展1',
+                key: 'storageName22',
+                type: 'input',
+                placeholder: '请输入存储',
+                value: null,
+              },
+              {
+                label: '时间选择',
+                key: 'time',
+                type: 'date',
+                value: [
+                  { value: null, disabled: false, required: false}
+                ]
+              },
+              {
+                label: '存储类型2',
+                key: 'storageType2',
+                type: 'select',
+                selectOptions: this.pageApi.dictionaryModel().pipe(
+                  map((res: any) => {
+                    const list: SelectOption[] = [];
+                    if (res && res.data) {
+                      res.data.forEach(es => {
+                        list.push({
+                          label: es.name,
+                          value: es.id,
+                          tips: es.title
+                        });
+                      });
+                    }
+                    return list;
+                  })
+                ),
+                placeholder: '请选择存储类型2',
+                value: null,
+                errorMsg: {
+                  required: '请选择'
+                }
+              },
+              {
+                label: '是否正确',
+                key: 'isOKs',
+                type: 'radio',
+                selectOptions: this.pageApi.dictionaryModel().pipe(
+                  map((res: any) => {
+                    const list: SelectOption[] = [];
+                    if (res && res.data) {
+                      res.data.forEach(es => {
+                        list.push({
+                          label: es.name,
+                          value: es.id,
+                          tips: es.title
+                        });
+                      });
+                    }
+                    return list;
+                  })
+                ),
+                placeholder: '请选择',
+                value: null,
+                errorMsg: {
+                  required: '请选择'
+                }
+              },
+              {
+                label: '存储名称',
+                key: 'storageName',
+                type: 'input',
+                derivativeType: 'number',
+                placeholder: '请输入存储',
+                value: null,
+              },
+              {
+                label: 'textarea测试',
+                key: 'storageName23',
+                type: 'textarea',
+                placeholder: '请输入存储',
+                value: null,
+              },
+              {
+                label: '存储类型',
+                key: 'storageType',
+                type: 'select',
+                selectOptions: [
+                  {
+                    label: 'HIVE',
+                    value: 'hive',
+                    tips: 'hive'
+                  },
+                  {
+                    label: 'HDFS',
+                    value: 'hdfs'
+                  }
+                ],
+                placeholder: '请选择存储类型',
+                value: [
+                  {value: 'hive', disabled: false, required: true},
+                  [Validators.required]
+                ],
+                errorMsg: {
+                  required: '请选择'
+                }
+              },
+              {
+                label: '是否正确',
+                key: 'isOK',
+                type: 'radio',
+                derivativeType: 'button',
+                selectOptions: this.pageApi.dictionaryModel().pipe(
+                  map((res: any) => {
+                    const list: SelectOption[] = [];
+                    if (res && res.data) {
+                      res.data.forEach(es => {
+                        list.push({
+                          label: es.name,
+                          value: es.id,
+                          tips: es.title
+                        });
+                      });
+                    }
+                    return list;
+                  })
+                ),
+                placeholder: '请选择',
+                value: [
+                  {value: null, disabled: false, required: false}
+                ],
+                errorMsg: {
+                  required: '请选择'
+                }
+              },
+              {
+                label: '多选演示',
+                key: 'isOK2',
+                type: 'checkbox',
+                selectOptions: [
+                  {
+                    label: 'HIVE',
+                    value: 'hive',
+                    tips: 'hive'
+                  },
+                  {
+                    label: 'HDFS',
+                    value: 'hdfs'
+                  }
+                ],
+                placeholder: '请选择',
+                value: [
+                  {value: null, disabled: false, required: true},
+                  [Validators.required]
+                ],
+                errorMsg: {
+                  required: '请选择'
+                }
+              }
+            ]
+          ],
+          key: 'formarr'
+        }
       }
     },
     {
@@ -309,5 +480,9 @@ export class AppComponent implements OnInit {
 
   submit(res) {
     console.log(res, this.global);
+  }
+
+  qhshow() {
+    this.isShow = !this.isShow;
   }
 }

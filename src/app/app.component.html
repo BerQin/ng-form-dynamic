@@ -1,28 +1,31 @@
-<div class="form-box">
+<div class="form-box"  *ngIf="isShow">
   <fd-form-dynamic
     [options] = "formOptions"
     [layout] = "'horizontal'"
-    (formSubmit)="submit($event)"
-  ></fd-form-dynamic>
-
-  
-  <fd-form-dynamic
-    [options] = "formOptions2"
-    [layout] = "'vertical'"
     [key]="'tijiaoer'"
     [fdButtonRender] = "buttonGroup"
     (formSubmit)="submit($event)"
   >
-    <ng-template #buttonGroup >
-      <button nz-button [disabled]="global?.formGroups?.tijiaoer?.invalid" nzType="primary">提交2</button>
-    </ng-template>
+  <ng-template #buttonGroup >
+    <button nz-button [disabled]="global?.formGroups?.tijiaoer?.invalid" nzType="primary">提交2</button>
+  </ng-template>
+</fd-form-dynamic>
+
+  <fd-form-dynamic
+    [options] = "formOptions2"
+    [layout] = "'vertical'"
+    (formSubmit)="submit($event)"
+  >
   </fd-form-dynamic>
 
-  
   <fd-form-dynamic
     [options] = "formOptions3"
     [layout] = "'inline'"
     (formSubmit)="submit($event)"
   ></fd-form-dynamic>
+</div>
+
+<div class="form-box" >
+  <button (click)="qhshow()" nz-button nzType="primary">切换</button>
 </div>
 

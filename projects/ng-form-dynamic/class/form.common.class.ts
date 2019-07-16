@@ -29,6 +29,7 @@ export class FormCommonClass {
   }
 
   @Input() groupName: any = null;
+  @Input() arrayName: any = null;
 
   public get FormGroup(): FormGroup | null {
     return this.groupItemService.group;

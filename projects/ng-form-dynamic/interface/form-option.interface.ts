@@ -12,6 +12,7 @@ export interface FormOption {
   showTime?: boolean;  //  仅时间date类型使用
   selectOptions?: SelectOption[] | Observable<SelectOption[]>;  //  radio select checkbox 类型使用
   required?: boolean;
+  hide?: boolean; // 是否显示出来 用于值记录的
   value: any | [ValueOption, ValidatorFn | ValidatorFn[] | AbstractControlOptions | null];
   placeholder?: string;
   errorMsg?: {
@@ -22,7 +23,12 @@ export interface FormOption {
 }
 
 export interface FormArrayItem {
-  [key: string]: FormGroupOption[];
+  [key: string]: FormGroupArrOption;
+}
+
+export interface FormGroupArrOption {
+  groupsArr: Array<FormOption[]>;
+  key: string;
 }
 
 export interface FormGroupItem {

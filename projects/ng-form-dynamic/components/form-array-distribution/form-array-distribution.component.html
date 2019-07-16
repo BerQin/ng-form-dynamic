@@ -1,0 +1,50 @@
+
+<ng-container *ngIf="arrayName">
+  <ng-container *ngFor="let itemGroups of options; let i = index">
+    <ng-container *ngFor = "let item of itemGroups; let k = index;">
+
+      <fd-form-input
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'input' && !item.hide"
+      ></fd-form-input>
+
+      <fd-form-select
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'select' && !item.hide"
+      ></fd-form-select>
+
+      <fd-form-radio
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'radio' && !item.hide"
+      ></fd-form-radio>
+
+      <fd-form-date
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'date' && !item.hide"
+      ></fd-form-date>
+
+      <fd-form-checkbox
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'checkbox' && !item.hide"
+      ></fd-form-checkbox>
+
+      <fd-form-textarea
+        [option] = "item"
+        [arrayName] = "arrayName"
+        [groupName] = "i"
+        *ngIf = "item.type === 'textarea' && !item.hide"
+      ></fd-form-textarea>
+
+    </ng-container>
+  </ng-container>
+</ng-container>
