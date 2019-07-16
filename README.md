@@ -1,13 +1,25 @@
 
 # ng-form-dynamic
-> angular7+以上的版本可以使用；进行动态表单配置生成满足通畅需求
+> angular7+以上的版本可以使用；进行动态表单配置生成满足通常情况下的使用需求
 
 ## 更新日志
 
-```
-v1.0.0
 
 ```
+v1.0.0
+支持formgroup扩展
+支持'input' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date'
+支持扩展类型 'number' | 'button' | 'date' | 'month' | 'year' | 'week'详情请查看最下方的其他说明
+支持自定义提交按钮
+释放全局的服务记录表单主体FormGroup,需要在组件传入key
+支持校验和错误提示
+
+
+v1.0.1
+添加formArray扩展生成配置
+确认只支持二级扩展
+```
+
 
 ## 1、开始使用
 ## <a name="install">安装</a>
@@ -20,6 +32,7 @@ npm i ng-form-dynamic
 ## <a name="use">使用</a>
 
 首先要配置``ant-reset-private``UI组件引入
+
 ``NgFormDynamicModule`` 需要在组件所在的model中引入
 
 ```javascript
@@ -148,17 +161,28 @@ export interface FormOption {
   key: string;
   type: 'input' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'date';
   derivativeType?: 'number' | 'button' | 'date' | 'month' | 'year' | 'week';
-  dateFormat?: string;  //  仅时间date类型使用 设置时间格式
-  valueFormat?: string;  //  仅时间date类型使用 设置时间返回数据格式
-  showTime?: boolean;  //  仅时间date类型使用 是否需要时分秒配置
+  dateFormat?: string;  //  仅时间date类型使用
+  valueFormat?: string;  //  仅时间date类型使用
+  showTime?: boolean;  //  仅时间date类型使用
   selectOptions?: SelectOption[] | Observable<SelectOption[]>;  //  radio select checkbox 类型使用
   required?: boolean;
+  hide?: boolean; // 是否显示出来 用于值记录的
   value: any | [ValueOption, ValidatorFn | ValidatorFn[] | AbstractControlOptions | null];
   placeholder?: string;
   errorMsg?: {
     [key: string]: string
   };
+  formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
+}
+
+export interface FormArrayItem {
+  [key: string]: FormGroupArrOption;
+}
+
+export interface FormGroupArrOption {
+  groupsArr: Array<FormOption[]>;
+  key: string;
 }
 
 export interface FormGroupItem {
@@ -187,7 +211,6 @@ export interface ValueOption {
 #包含一个全局服务
 
 是包含全局的form表单的服务``FormGroupsService``在组件中通过key传入
-
 
 #其他说明
 

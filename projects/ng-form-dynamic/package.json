@@ -1,7 +1,6 @@
 {
   "name": "ng-form-dynamic",
   "version": "1.0.0",
-  "license": "MIT",
   "description": "About Angular dynamic form",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
@@ -10,6 +9,14 @@
     "@angular/forms": "~7.2.0",
     "rxjs": "~6.3.3",
     "typescript": "~3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BerQin/ng-form-dynamic"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BerQin/ng-form-dynamic/issues"
   },
   "keywords": [
     "ant",
