@@ -258,20 +258,6 @@ export class AppComponent implements OnInit {
       value: [
         {value: null, disabled: false, required: false}
       ],
-      formGroup: {
-        109511: {
-          groups: [
-            {
-              label: 'isOk扩展',
-              key: 'storageName2',
-              type: 'input',
-              placeholder: '请输入存储',
-              value: null,
-            }
-          ],
-          key: 'kuozhan'
-        }
-      },
       errorMsg: {
         required: '请选择'
       },

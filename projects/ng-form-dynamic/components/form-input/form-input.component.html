@@ -113,3 +113,10 @@
   [options] = "option.formGroup[FormGroup.get(option.key).value].groups"
   [groupName] = "option.formGroup[FormGroup.get(option.key).value].key"
 ></fd-form-item-distribution>
+
+<fd-form-array-distribution
+  *ngIf = "option.formArray && FormGroup.get(option.key).value && option.formArray[FormGroup.get(option.key).value]"
+  [group]="FormGroup"
+  [options] = "option.formArray[FormGroup.get(option.key).value].groupsArr"
+  [arrayName] = "option.formArray[FormGroup.get(option.key).value].key"
+></fd-form-array-distribution>

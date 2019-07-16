@@ -138,7 +138,7 @@ export class FormDynamicComponent implements OnInit {
     if (isfirst) {
       this.groupService.groupOptions[item.key] = item;
 
-      if (item.formGroup || (item.formArray && item.formArray.length)) {
+      if (item.formGroup || item.formArray) {
         if (this.listenKeys.indexOf(item.key) === -1) {
           this.listenKeys.push(item.key);
         }
