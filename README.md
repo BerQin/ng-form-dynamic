@@ -24,6 +24,7 @@ v1.1.0
 
 v1.2.0
 支持单行模板扩展请使用属性extTemplate
+在全局服务中增加数据处理能力 checkBoxData 和 peersJson
 ```
 
 ## 1、开始使用
@@ -163,6 +164,15 @@ export class AppComponent implements OnInit {
 
   submit(res) {
     console.log(res, this.global);
+    const data = res;
+    this.global.checkBoxData(data, 'array');
+    console.log(data);
+    const datar = this.global.peersJson(data);
+    console.log(datar);
+  }
+
+  add() {
+    console.log('click add');
   }
 }
 ```

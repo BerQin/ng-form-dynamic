@@ -142,6 +142,15 @@ export class AppComponent implements OnInit {
 
   submit(res) {
     console.log(res, this.global);
+    const data = res;
+    this.global.checkBoxData(data, 'array');
+    console.log(data);
+    const datar = this.global.peersJson(data);
+    console.log(datar);
+  }
+
+  add() {
+    console.log('click add');
   }
 }
 ```
