@@ -127,7 +127,7 @@ export class AppComponent implements OnInit {
         errorMsg: {
           required: '请填写内容'
         },
-        extTemplate: this.selectEx
+        extTemplate: this.InputEx
       },
       {
         label: '数量',

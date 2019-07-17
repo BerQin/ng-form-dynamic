@@ -275,7 +275,7 @@ export class AppComponent implements OnInit {
         ),
         placeholder: '请选择',
         value: [
-          {value: null, disabled: false, required: false}
+          {value: 109511, disabled: false, required: false}
         ],
         errorMsg: {
           required: '请选择'
@@ -289,7 +289,7 @@ export class AppComponent implements OnInit {
                   key: 'storageName22',
                   type: 'input',
                   placeholder: '请输入存储',
-                  value: null,
+                  value: 'asdasd',
                   extTemplate: this.selectEx,
                 },
                 {
@@ -345,7 +345,7 @@ export class AppComponent implements OnInit {
                     })
                   ),
                   placeholder: '请选择',
-                  value: null,
+                  value: 109511,
                   errorMsg: {
                     required: '请选择'
                   }
@@ -490,5 +490,6 @@ export class AppComponent implements OnInit {
 
   qhshow() {
     this.isShow = !this.isShow;
+    console.log(this.global);
   }
 }

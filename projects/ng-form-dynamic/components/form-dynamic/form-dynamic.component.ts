@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, TemplateRef, ContentChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, TemplateRef, ContentChild, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { Subject } from 'rxjs';
@@ -15,7 +15,7 @@ import { FormGroupsService, FormGlobalService } from '../../service';
     FormGroupsService
   ]
 })
-export class FormDynamicComponent implements OnInit {
+export class FormDynamicComponent implements OnInit, OnDestroy {
 
   @Input() set options(value: FormOption[]) {
     this.groupService.options = value;
@@ -202,5 +202,11 @@ export class FormDynamicComponent implements OnInit {
 
   submitForm() {
     this.formSubmit.emit(this.groupService.FormGroup.getRawValue());
+  }
+
+  ngOnDestroy() {
+    if (this.key && this.globalService.formGroups[this.key]) {
+      delete this.globalService.formGroups[this.key];
+    }
   }
 }
