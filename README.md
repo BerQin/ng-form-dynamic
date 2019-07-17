@@ -22,6 +22,10 @@ v1.1.0
 确认只支持二级扩展
 
 
+v1.1.1
+fix: 解决formArray的加载BUG
+
+
 v1.2.0
 支持单行模板扩展请使用属性extTemplate
 在全局服务中增加数据处理能力 checkBoxData 和 peersJson
