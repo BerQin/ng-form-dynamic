@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-date',
   templateUrl: './form-date.component.html',
-  styleUrls: ['./form-date.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-date.component.less'
+  ]
 })
 export class FormDateComponent extends FormCommonClass implements OnInit {
 

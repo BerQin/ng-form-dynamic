@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-textarea',
   templateUrl: './form-textarea.component.html',
-  styleUrls: ['./form-textarea.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-textarea.component.less'
+  ]
 })
 export class FormTextareaComponent extends FormCommonClass implements OnInit {
 

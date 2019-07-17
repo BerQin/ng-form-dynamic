@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-radio',
   templateUrl: './form-radio.component.html',
-  styleUrls: ['./form-radio.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-radio.component.less'
+  ]
 })
 export class FormRadioComponent extends FormCommonClass implements OnInit {
 

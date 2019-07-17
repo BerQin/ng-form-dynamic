@@ -21,6 +21,16 @@
             [placeholder]="option.placeholder"
           ></textarea>
 
+          <ng-container
+            *ngIf="option.extTemplate"
+          >
+            <div class="fd-ext-template-box" >
+              <ng-container
+                [ngTemplateOutlet]="option.extTemplate"
+              ></ng-container>
+            </div>
+          </ng-container>
+
           <fd-form-error
             *ngIf="option.errorMsg"
             [option]="option"
@@ -50,6 +60,16 @@
           [placeholder]="option.placeholder"
         ></textarea>
 
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
+
         <fd-form-error
           *ngIf="option.errorMsg"
           [option]="option"
@@ -75,6 +95,16 @@
           [formControlName]="option.key"
           [placeholder]="option.placeholder"
         ></textarea>
+
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
     
         <fd-form-error
           *ngIf="option.errorMsg"

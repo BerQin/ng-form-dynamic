@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-input',
   templateUrl: './form-input.component.html',
-  styleUrls: ['./form-input.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-input.component.less'
+  ]
 })
 export class FormInputComponent extends FormCommonClass implements OnInit {
 
