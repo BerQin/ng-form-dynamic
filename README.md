@@ -1,6 +1,8 @@
-
 # ng-form-dynamic
 > angular7+以上的版本可以使用；进行动态表单配置生成满足通常情况下的使用需求
+
+> 支持单行扩展模板，请使用``extTemplate``属性配置
+
 
 ## 更新日志
 
@@ -18,18 +20,21 @@ v1.0.0
 v1.1.0
 添加formArray扩展生成配置
 确认只支持二级扩展
+
+
+v1.2.0
+支持单行模板扩展请使用属性extTemplate
 ```
 
-
 ## 1、开始使用
-## <a name="install">安装</a>
+## <a id="install">安装</a>
 
 ```
 npm i ant-reset-private
 npm i ng-form-dynamic
 ```
 
-## <a name="use">使用</a>
+## <a id="use">使用</a>
 
 首先要配置``ant-reset-private``UI组件引入
 
@@ -87,24 +92,29 @@ export class AppModule { }
 ],
 ```
 
-## <a name="used">在页面中使用</a>
+## <a id="used">在页面中使用</a>
 
 ```html
 <fd-form-dynamic
-    [options] = "formOptions"
-    [layout] = "'horizontal'"
-    [key]="'form1'"
-    [fdButtonRender] = "buttonGroup"
-    (formSubmit)="submit($event)"
-  >
-    <ng-template #buttonGroup >
-      <button nz-button [disabled]="global?.formGroups?.form1?.invalid" nzType="primary">提交2</button>
-    </ng-template>
-  </fd-form-dynamic>
+  [options] = "formOptions"
+  [layout] = "'horizontal'"
+  [key]="'form1'"
+  [fdButtonRender] = "buttonGroup"
+  (formSubmit)="submit($event)"
+>
+  <ng-template #buttonGroup >
+    <button nz-button [disabled]="global?.formGroups?.form1?.invalid" nzType="primary">提交2</button>
+  </ng-template>
+</fd-form-dynamic>
+
+<!-- 扩展 -->
+<ng-template #InputEx >
+  <a (click)="add()" >添加</a>
+</ng-template>
 ```
 
 ```javascript
-import { Component, OnInit, Optional } from '@angular/core';
+import { Component, OnInit, Optional, ViewChild, ElementRef } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FormOption, SelectOption, FormGlobalService } from 'ng-form-dynamic';
 
@@ -114,29 +124,9 @@ import { FormOption, SelectOption, FormGlobalService } from 'ng-form-dynamic';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  formOptions3: FormOption[] = [
-    {
-      label: '名称',
-      key: 'storageName',
-      type: 'input',
-      placeholder: '请输入名称',
-      value: [
-        {value: null, disabled: false, required: true},
-        [Validators.required]
-      ],
-      errorMsg: {
-        required: '请填写内容'
-      },
-    },
-    {
-      label: '数量',
-      key: 'storageName',
-      type: 'input',
-      derivativeType: 'number',
-      placeholder: '数量',
-      value: null,
-    }
-  ];
+  @ViewChild('InputEx') InputEx: ElementRef;
+  formOptions: FormOption[];
+
   constructor(
     public global: FormGlobalService
   ) {
@@ -145,6 +135,30 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.global);
+    this.formOptions = [
+      {
+        label: '名称',
+        key: 'storageName',
+        type: 'input',
+        placeholder: '请输入名称',
+        value: [
+          {value: null, disabled: false, required: true},
+          [Validators.required]
+        ],
+        errorMsg: {
+          required: '请填写内容'
+        },
+        extTemplate: this.selectEx
+      },
+      {
+        label: '数量',
+        key: 'storageName',
+        type: 'input',
+        derivativeType: 'number',
+        placeholder: '数量',
+        value: null,
+      }
+    ];
   }
 
   submit(res) {
@@ -153,7 +167,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-## <a name="config">配置interface</a>
+## <a id="config">配置interface</a>
 
 ```javascript
 export interface FormOption {
@@ -172,6 +186,7 @@ export interface FormOption {
   errorMsg?: {
     [key: string]: string
   };
+  extTemplate?: ElementRef;
   formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
 }
@@ -208,11 +223,25 @@ export interface ValueOption {
 }
 ```
 
-#包含一个全局服务
+## <a id="function">包含一个全局服务</a>
 
 是包含全局的form表单的服务``FormGroupsService``在组件中通过key传入
 
-#其他说明
+```javascript
+public formGroups: {
+  [key: string]: FormGroup
+};
+```
+
+#其他方法
+
+``FormGroupsService``服务中包含数据处理的方法目前有：
+
+``checkBoxData`` 可以将submit数据的多选选项格式化成数据数组或以``,``分隔的字符串
+
+``peersJson`` 可以将submit数据的JSON深度变成一层深度 如果有重复字段最深的字段会覆盖最前面的字段，请注意避免重复
+
+## <a id="other">其他说明</a>
 
 ``options``属性为必填属性配置 其他均为选填
 

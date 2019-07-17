@@ -45,6 +45,16 @@
               </ng-container>
             </ng-container>
           </nz-radio-group>
+
+          <ng-container
+            *ngIf="option.extTemplate"
+          >
+            <div class="fd-ext-template-box" >
+              <ng-container
+                [ngTemplateOutlet]="option.extTemplate"
+              ></ng-container>
+            </div>
+          </ng-container>
         
           <fd-form-error
             *ngIf="option.errorMsg"
@@ -99,6 +109,16 @@
             </ng-container>
           </ng-container>
         </nz-radio-group>
+
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
       
         <fd-form-error
           *ngIf="option.errorMsg"
@@ -150,6 +170,16 @@
             </ng-container>
           </ng-container>
         </nz-radio-group>
+
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
       
         <fd-form-error
           *ngIf="option.errorMsg"

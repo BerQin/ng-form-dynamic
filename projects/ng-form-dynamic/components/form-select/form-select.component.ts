@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-select',
   templateUrl: './form-select.component.html',
-  styleUrls: ['./form-select.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-select.component.less'
+  ]
 })
 export class FormSelectComponent extends FormCommonClass implements OnInit {
 

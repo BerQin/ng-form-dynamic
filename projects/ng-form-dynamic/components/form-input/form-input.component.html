@@ -27,6 +27,16 @@
             *ngIf="option.derivativeType === 'number'"
             [formControlName]="option.key"
           ></nz-input-number>
+
+          <ng-container
+            *ngIf="option.extTemplate"
+          >
+            <div class="fd-ext-template-box" >
+              <ng-container
+                [ngTemplateOutlet]="option.extTemplate"
+              ></ng-container>
+            </div>
+          </ng-container>
   
           <fd-form-error
             *ngIf="option.errorMsg"
@@ -64,6 +74,16 @@
           [formControlName]="option.key"
         ></nz-input-number>
 
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
+
         <fd-form-error
           *ngIf="option.errorMsg"
           [option]="option"
@@ -96,6 +116,16 @@
           *ngIf="option.derivativeType === 'number'"
           [formControlName]="option.key"
         ></nz-input-number>
+
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
     
         <fd-form-error
           *ngIf="option.errorMsg"

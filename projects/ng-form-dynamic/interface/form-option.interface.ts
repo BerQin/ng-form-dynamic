@@ -1,6 +1,7 @@
 
 import { ValidatorFn, AbstractControlOptions } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { ElementRef } from '@angular/core';
 
 export interface FormOption {
   label: string;
@@ -18,6 +19,7 @@ export interface FormOption {
   errorMsg?: {
     [key: string]: string
   };
+  extTemplate?: ElementRef;
   formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
 }

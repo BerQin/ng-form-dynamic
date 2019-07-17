@@ -20,6 +20,16 @@
             *ngIf="!option.derivativeType"
             [formControlName]="option.key"
           ></nz-checkbox-group>
+
+          <ng-container
+            *ngIf="option.extTemplate"
+          >
+            <div class="fd-ext-template-box" >
+              <ng-container
+                [ngTemplateOutlet]="option.extTemplate"
+              ></ng-container>
+            </div>
+          </ng-container>
   
           <fd-form-error
             *ngIf="option.errorMsg"
@@ -50,6 +60,16 @@
           [formControlName]="option.key"
         ></nz-checkbox-group>
 
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
+
         <fd-form-error
           *ngIf="option.errorMsg"
           [option]="option"
@@ -75,6 +95,16 @@
           *ngIf="!option.derivativeType"
           [formControlName]="option.key"
         ></nz-checkbox-group>
+
+        <ng-container
+          *ngIf="option.extTemplate"
+        >
+          <div class="fd-ext-template-box" >
+            <ng-container
+              [ngTemplateOutlet]="option.extTemplate"
+            ></ng-container>
+          </div>
+        </ng-container>
     
         <fd-form-error
           *ngIf="option.errorMsg"

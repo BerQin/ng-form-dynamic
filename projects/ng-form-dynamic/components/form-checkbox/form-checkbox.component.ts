@@ -7,7 +7,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 @Component({
   selector: 'fd-form-checkbox',
   templateUrl: './form-checkbox.component.html',
-  styleUrls: ['./form-checkbox.component.less']
+  styleUrls: [
+    '../../style/index.less',
+    './form-checkbox.component.less'
+  ]
 })
 export class FormCheckboxComponent extends FormCommonClass implements OnInit {
 
