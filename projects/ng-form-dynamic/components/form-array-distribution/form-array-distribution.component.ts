@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormArray } from '@angular/forms';
-import { FormOption } from '../../interface';
-import { FormGroupItemService } from '../../service';
+import { FormGroup } from '@angular/forms';
+import { FormOption } from '../../interface/form-option.interface';
+import { FormGroupItemService } from '../../service/form-group-item.service';
 
 @Component({
   selector: 'fd-form-array-distribution',

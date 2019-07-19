@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
-import { FormCommonClass } from '../../class';
-import { FormOption } from '../../interface';
-import { FormGroupsService, FormGroupItemService } from '../../service';
+import { FormCommonClass } from '../../class/form.common.class';
+import { FormGroupsService } from '../../service/form-groups.service';
+import { FormGroupItemService } from '../../service/form-group-item.service';
+import { FormOption } from '../../interface/form-option.interface';
 
 @Component({
   selector: 'fd-form-error',
@@ -27,11 +28,10 @@ export class FormErrorComponent extends FormCommonClass implements OnInit {
   }
 
   constructor(
-    public fb: FormBuilder,
     public groupService: FormGroupsService,
     public groupItemService: FormGroupItemService
   ) {
-    super(fb, groupService, groupItemService);
+    super(groupService, groupItemService);
   }
 
   ngOnInit() {

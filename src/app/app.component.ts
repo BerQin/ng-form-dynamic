@@ -275,7 +275,7 @@ export class AppComponent implements OnInit {
         ),
         placeholder: '请选择',
         value: [
-          {value: null, disabled: false, required: false}
+          {value: 109511, disabled: false, required: false}
         ],
         errorMsg: {
           required: '请选择'
@@ -289,7 +289,7 @@ export class AppComponent implements OnInit {
                   key: 'storageName22',
                   type: 'input',
                   placeholder: '请输入存储',
-                  value: null,
+                  value: 'asdasd',
                   extTemplate: this.selectEx,
                 },
                 {
@@ -345,7 +345,7 @@ export class AppComponent implements OnInit {
                     })
                   ),
                   placeholder: '请选择',
-                  value: null,
+                  value: 109511,
                   errorMsg: {
                     required: '请选择'
                   }
@@ -449,7 +449,32 @@ export class AppComponent implements OnInit {
       },
       {
         label: '多选演示',
-        key: 'isOK2',
+        key: 'isOK3',
+        type: 'checkbox',
+        extTemplate: this.selectEx,
+        selectOptions: [
+          {
+            label: 'HIVE',
+            value: 'hive',
+            tips: 'hive'
+          },
+          {
+            label: 'HDFS',
+            value: 'hdfs'
+          }
+        ],
+        placeholder: '请选择',
+        value: [
+          {value: null, disabled: false, required: true},
+          [Validators.required]
+        ],
+        errorMsg: {
+          required: '请选择'
+        }
+      },
+      {
+        label: '多选演示',
+        key: 'isOK23',
         type: 'checkbox',
         extTemplate: this.selectEx,
         selectOptions: [
@@ -490,5 +515,6 @@ export class AppComponent implements OnInit {
 
   qhshow() {
     this.isShow = !this.isShow;
+    console.log(this.global);
   }
 }
