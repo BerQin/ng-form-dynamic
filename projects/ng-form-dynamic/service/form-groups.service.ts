@@ -1,7 +1,8 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { FormOption, ListenComponetDestroyedType } from '../interface';
+import { ListenComponetDestroyedType } from '../interface/form-service.interface';
+import { FormOption } from '../interface/form-option.interface';
 
 @Injectable()
 export class FormGroupsService implements OnDestroy {

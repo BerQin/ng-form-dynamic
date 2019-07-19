@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, TemplateRef, ContentChild, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { FormOption, FormGroupOption, FormGroupItem, SelectOption, FormGroupArrOption, FormArrayItem } from '../../interface';
-import { FormGroupsService, FormGlobalService } from '../../service';
+import { FormOption, FormGroupItem, SelectOption, FormArrayItem } from '../../interface/form-option.interface';
+import { FormGroupsService } from '../../service/form-groups.service';
+import { FormGlobalService } from '../../service/form-global.service';
 
 @Component({
   selector: 'fd-form-dynamic',
@@ -37,7 +38,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
 
   @Output() formSubmit: EventEmitter<any> = new EventEmitter();
 
-  @Input() fdButtonRender: TemplateRef<void>;
+  @Input() fdButtonRender: any;
 
   private listenKeys: string[] = [];
   private defaultValue: {
@@ -62,7 +63,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     }
   }
 
-  initFormGroup() {
+  initFormGroup(): void {
     this.options.forEach((item: FormOption, index) => {
       this.groupService.FormGroupOption[item.key] = this.initItemConfig(item, true);
     });
@@ -96,7 +97,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     });
   }
 
-  clearGroupForm(item: FormGroupItem) {
+  clearGroupForm(item: FormGroupItem): void {
     for (const key in item) {
       if (key) {
         this.groupService.FormGroup.removeControl(item[key].key);
@@ -104,7 +105,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     }
   }
 
-  clearArrGroupForm(item: FormArrayItem) {
+  clearArrGroupForm(item: FormArrayItem): void {
     for (const key in item) {
       if (key) {
         this.groupService.FormGroup.removeControl(item[key].key);
@@ -200,11 +201,11 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
     return result;
   }
 
-  submitForm() {
+  submitForm(): void {
     this.formSubmit.emit(this.groupService.FormGroup.getRawValue());
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.key && this.globalService.formGroups[this.key]) {
       delete this.globalService.formGroups[this.key];
     }

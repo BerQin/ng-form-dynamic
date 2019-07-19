@@ -29,6 +29,10 @@ fix: 解决formArray的加载BUG
 v1.2.0
 支持单行模板扩展请使用属性extTemplate
 在全局服务中增加数据处理能力 checkBoxData 和 peersJson
+
+
+v1.2.1
+修改目录结构解决--prod构建bug
 ```
 
 ## 1、开始使用

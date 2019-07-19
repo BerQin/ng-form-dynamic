@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
-import { FormCommonClass } from '../../class';
-import { FormGroupsService, FormGroupItemService } from '../../service';
+import { FormCommonClass } from '../../class/form.common.class';
+import { FormGroupsService } from '../../service/form-groups.service';
+import { FormGroupItemService } from '../../service/form-group-item.service';
 
 @Component({
   selector: 'fd-form-radio',
@@ -15,11 +15,10 @@ import { FormGroupsService, FormGroupItemService } from '../../service';
 export class FormRadioComponent extends FormCommonClass implements OnInit {
 
   constructor(
-    public fb: FormBuilder,
     public groupService: FormGroupsService,
     public groupItemService: FormGroupItemService
   ) {
-    super(fb, groupService, groupItemService);
+    super(groupService, groupItemService);
   }
 
   ngOnInit() {

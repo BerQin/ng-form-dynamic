@@ -1,9 +1,10 @@
 import { Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
-import { FormGroupsService, FormGroupItemService } from '../service';
-import { FormOption, SelectOption } from '../interface';
+import { FormGroupsService } from '../service/form-groups.service';
+import { FormGroupItemService } from '../service/form-group-item.service';
+import { FormOption, SelectOption } from '../interface/form-option.interface';
 
 export class FormCommonClass {
 
@@ -39,10 +40,9 @@ export class FormCommonClass {
     return this.groupService.isHorizontal;
   }
 
-  public ObjectKeys = Object.keys;
+  public ObjectKeys: any = Object.keys;
 
   constructor(
-    public fb: FormBuilder,
     public groupService: FormGroupsService,
     public groupItemService: FormGroupItemService
   ) {}
