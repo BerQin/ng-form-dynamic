@@ -248,6 +248,9 @@ export class AppComponent implements OnInit {
           {value: 109512, disabled: false, required: true},
           [Validators.required]
         ],
+        style: {
+          'min-width': '120px'
+        },
         errorMsg: {
           required: '请选择'
         }

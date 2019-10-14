@@ -20,6 +20,7 @@
             nzAllowClear
             [formControlName]="option.key"
             [nzPlaceHolder]="option.placeholder"
+            [ngStyle]="option.style"
           >
             <ng-container *ngIf = "!isWeb">
               <nz-option *ngFor="let option of selectOptions" [nzTips]="option.tips" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
@@ -67,6 +68,7 @@
           nzAllowClear
           [formControlName]="option.key"
           [nzPlaceHolder]="option.placeholder"
+          [ngStyle]="option.style"
         >
           <ng-container *ngIf = "!isWeb">
             <nz-option *ngFor="let option of selectOptions" [nzTips]="option.tips" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
@@ -111,6 +113,7 @@
           nzAllowClear
           [formControlName]="option.key"
           [nzPlaceHolder]="option.placeholder"
+          [ngStyle]="option.style"
         >
           <ng-container *ngIf = "!isWeb">
             <nz-option *ngFor="let option of selectOptions" [nzTips]="option.tips" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>

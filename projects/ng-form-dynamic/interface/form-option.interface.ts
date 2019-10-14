@@ -19,6 +19,7 @@ export interface FormOption {
   errorMsg?: {
     [key: string]: string
   };
+  style?: {[key: string]: string};
   extTemplate?: ElementRef;
   formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
