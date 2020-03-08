@@ -27,6 +27,7 @@ export class FormDynamicComponent implements OnInit, OnDestroy {
   }
 
   @Input() key: string = null;
+  @Input() isShowButton: boolean = true;
 
   @Input() set layout(value: 'horizontal' | 'vertical' | 'inline') {
     this.groupService._layout = value || 'horizontal';
