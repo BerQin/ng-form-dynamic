@@ -9,11 +9,11 @@
     >
       <nz-form-item>
         <nz-form-label
-          [nzSpan]="isHorizontal ? 4 : null"
+          [nzSpan]="isHorizontal ? option?.configNzSpan?.label ? option?.configNzSpan?.label : 4 : null"
           [nzRequired]="option.required"
         >{{option.label}}</nz-form-label>
         <nz-form-control
-          [nzSpan]="isHorizontal ? 14 : null"
+          [nzSpan]="isHorizontal ? option?.configNzSpan?.control ? option?.configNzSpan?.control : 14 : null"
         >
   
           <nz-range-picker
@@ -80,11 +80,11 @@
   >
     <nz-form-item>
       <nz-form-label
-        [nzSpan]="isHorizontal ? 4 : null"
+        [nzSpan]="isHorizontal ? option?.configNzSpan?.label ? option?.configNzSpan?.label : 4 : null"
         [nzRequired]="option.required"
       >{{option.label}}</nz-form-label>
       <nz-form-control
-        [nzSpan]="isHorizontal ? 14 : null"
+        [nzSpan]="isHorizontal ? option?.configNzSpan?.control ? option?.configNzSpan?.control : 14 : null"
       >
 
         <nz-range-picker
@@ -148,11 +148,11 @@
   >
     <nz-form-item>
       <nz-form-label
-        [nzSpan]="isHorizontal ? 4 : null"
+        [nzSpan]="isHorizontal ? option?.configNzSpan?.label ? option?.configNzSpan?.label : 4 : null"
         [nzRequired]="option.required"
       >{{option.label}}</nz-form-label>
       <nz-form-control
-        [nzSpan]="isHorizontal ? 14 : null"
+        [nzSpan]="isHorizontal ? option?.configNzSpan?.control ? option?.configNzSpan?.control : 14 : null"
       >
 
         <nz-range-picker

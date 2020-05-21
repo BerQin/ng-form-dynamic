@@ -20,6 +20,14 @@ export interface FormOption {
     [key: string]: string
   };
   style?: {[key: string]: string};
+  configNzSpan?: {
+    label?: number;
+    control?: number;
+  };
+  configNzOffset?: {
+    label?: number;
+    control?: number;
+  };
   extTemplate?: ElementRef;
   formArray?: FormArrayItem;
   formGroup?: FormGroupItem;
